@@ -12,9 +12,7 @@ function BookGetData() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-              const response = await axios.get(
-                `http://localhost:5000/api/books/getBook?page=${page}&limit=${limit}` ||
-                  `https://bookbackends.vercel.app/api/books/getBook?page=${page}&limit=${limit}`,
+              const response = await axios.get( `https://bookbackend-vikashs-projects-f1acf06b.vercel.app/api/books/getBook?page=${page}&limit=${limit}`
               );
             setItems(response.data.book);
              if (response.data) {

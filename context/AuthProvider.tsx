@@ -36,8 +36,8 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const getUserData = async () => {
     try {
       const res = await axios.get<User>(
-        "http://localhost:5000/api/users/user" ||
-          "https://bookbackends.vercel.app/api/users/user",
+
+          "https://bookbackend-vikashs-projects-f1acf06b.vercel.app/api/users/user",
         {
           withCredentials: true,
         }
@@ -59,7 +59,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logoutUser = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/users/logout" ||
+        "host:5000/api/users/logout" ||
           "https://bookbackends.vercel.app/api/users/logout",
       );
       const data = res.data;
