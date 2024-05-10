@@ -53,12 +53,17 @@ const BookForm: React.FC = () => {
   }
 
   try {
-    const res = await axios.post("http://localhost:5000/api/books/get", formData, {
-      withCredentials: true,
-      headers: {
-        'Content-Type': 'multipart/form-data'
+    const res = await axios.post(
+      "http://localhost:5000/api/books/get" ||
+        "https://bookbackends.vercel.app/api/books/get",
+      formData,
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       }
-    });
+    );
 
     const data = await res.data;
 

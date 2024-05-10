@@ -44,7 +44,8 @@ interface Book {
   __v: number;
 }
 
-const baseUrl: string = "http://localhost:5000/api/users";
+const baseUrl: string =
+  "http://localhost:5000/api/users" || "https://bookbackends.vercel.app/api/users"; ;
 export const LoginData = async (email: string, password: string, router:any) => {
 
   try {
@@ -88,13 +89,15 @@ export const RegisterApi = async (name:string,email:string, password:string,rout
 export const getAllBooks = async () => {
   try {
 
-    const res = await axios.get(`http://localhost:5000/api/books/getBook`, {
-    
-      withCredentials: true,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await axios.get(
+      `http://localhost:5000/api/books/getBook` || "https://bookbackends.vercel.app//books/getBook",
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data :BookResponse = await res.data;
     return data.book
     console.log("🚀 ~ file: FetchData.tsx:93 ~ data:", data);
