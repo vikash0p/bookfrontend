@@ -44,7 +44,7 @@ interface Book {
   __v: number;
 }
 
-const baseUrl: string ="https://bookbackend-vikashs-projects-f1acf06b.vercel.app/api/users"; ;
+const baseUrl: string = "https://bookbackend-ecru.vercel.app/api/users"; ;
 export const LoginData = async (email: string, password: string, router:any) => {
 
   try {
@@ -89,8 +89,7 @@ export const getAllBooks = async () => {
   try {
 
     const res = await axios.get(
-
-        "https://bookbackend-vikashs-projects-f1acf06b.vercel.app/api/books/getBook",
+      "https://bookbackend-ecru.vercel.app/api/books/getBook",
       {
         withCredentials: true,
         headers: {
